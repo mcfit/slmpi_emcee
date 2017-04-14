@@ -72,4 +72,3 @@ Load the S-lang MCMC Hammer in your S-Lang script:
 7- Run the example:
 
     mpirun -np 8 isis ./example_mpi_emcee.sl
-
