@@ -63,7 +63,7 @@ Add slirp-module.so to the isis_load_path.
 
 Obtain the developing version from the github:
 
-    git clone https://github.com/mcfit/sl_emcee.git
+    git clone https://github.com/mcfit/slmpi_emcee.git
     
 Load the S-lang MCMC Hammer in your S-Lang script:
 
