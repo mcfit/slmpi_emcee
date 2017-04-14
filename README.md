@@ -68,3 +68,8 @@ Obtain the developing version from the github:
 Load the S-lang MCMC Hammer in your S-Lang script:
 
     require("mpi_isis_emcee");
+
+7- Run the example:
+
+    mpirun -np 8 isis ./example_mpi_emcee.sl
+
