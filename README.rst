@@ -6,8 +6,8 @@ slmpi_emcee
     :target: https://github.com/mcfit/slmpi_emcee/blob/master/LICENSE
     :alt: GitHub license
       
-.. image:: https://img.shields.io/badge/DOI-10.5281/zenodo.4495926-blue.svg
-    :target: https://doi.org/10.5281/zenodo.4495926
+.. image:: https://img.shields.io/badge/DOI-10.5281/zenodo.4495925-blue.svg
+    :target: https://doi.org/10.5281/zenodo.4495925
     :alt: Zenodo
     
 **The MPI-based Parallelization of the S-Lang MCMC Hammer**
@@ -91,5 +91,5 @@ Learn More
 ==================  =============================================
 **Repository**      https://github.com/mcfit/slmpi_emcee
 **Issues & Ideas**  https://github.com/mcfit/slmpi_emcee/issues
-**Archive**         `10.5281/zenodo.4495926 <https://doi.org/10.5281/zenodo.4495926>`_
+**Archive**         `10.5281/zenodo.4495925 <https://doi.org/10.5281/zenodo.4495925>`_
 ==================  =============================================
