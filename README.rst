@@ -39,7 +39,7 @@ or obtain the developing version from the ISISscripts git-repository::
 
     tar xfz isisscripts.tgz
     
-Add it to to your personal `~/.isisrc` startup file::
+Add it to to your personal ``~/.isisrc`` startup file::
 
     add_to_isis_load_path("/path/to/isisscripts/");
     
@@ -58,7 +58,7 @@ Then::
     make
     make install
 
-Add slirp-module.so to the isis_load_path.
+Add ``slirp-module.so`` to the isis_load_path.
 
 5- Install the S-lang MPI Interface Package (`slmpi <http://www.sternwarte.uni-erlangen.de/wiki/doku.php?id=isis:mpi>`_):
 
@@ -69,7 +69,7 @@ Then::
     gunzip -c slmpi.tar.gz | tar xf -
     make
 
-Add slmpi-module.so to the isis_load_path.
+Add ``slmpi-module.so`` to the isis_load_path.
 
 6- Install the S-lang MCMC Hammer:
 
