@@ -17,7 +17,9 @@ slmpi_emcee
 Installation
 ============
 
-1- Install HEASoft: download the `HEASOFT Software <https://heasarc.gsfc.nasa.gov/docs/software/heasoft/>`_::
+1- Install HEASoft: download the `HEASOFT Software <https://heasarc.gsfc.nasa.gov/docs/software/heasoft/>`_:
+
+.. code-block::
 
     gunzip -c heasoft6.19.tar.gz | tar xf -
     cd heasoft-6.19/BUILD_DIR/
@@ -25,7 +27,9 @@ Installation
     make
     make install
     
-2- Install ISIS::
+2- Install ISIS:
+
+.. code-block::
 
     wget http://space.mit.edu/cxc/isis/install-isis.sh
     setenv HEADAS /usr/local/headas/x86_64-unknown-linux-gnu-libc2.7/
@@ -33,17 +37,22 @@ Installation
 
 3- Install ISISscripts: download the `Remeis ISISscripts <http://www.sternwarte.uni-erlangen.de/isis/>`_
 
-or obtain the developing version from the ISISscripts git-repository::
+or obtain the developing version from the ISISscripts git-repository:
+
+.. code-block::
 
     git clone http://www.sternwarte.uni-erlangen.de/git.public/isisscripts 
-
     tar xfz isisscripts.tgz
     
-Add it to to your personal ``~/.isisrc`` startup file::
+Add it to to your personal ``~/.isisrc`` startup file:
+
+.. code-block:: prolog
 
     add_to_isis_load_path("/path/to/isisscripts/");
     
-Load the ISISscripts in your S-Lang script::
+Load the ISISscripts in your S-Lang script:
+
+.. code-block:: prolog
 
     require("isisscripts");
 
@@ -51,7 +60,9 @@ Load the ISISscripts in your S-Lang script::
 
 download `slirp-pre2.0.0-31.tar.gz <http://www.jedsoft.org/snapshots/>`_
 
-Then:: 
+Then:
+
+.. code-block::
 
     gunzip -c slirp-pre2.0.0-31.tar.gz | tar xf -
     ./configure
@@ -64,7 +75,9 @@ Add ``slirp-module.so`` to the ``isis_load_path``.
 
 download `slmpi <http://www.sternwarte.uni-erlangen.de/git.public/?p=slmpi.git>`_
 
-Then::
+Then:
+
+.. code-block::
 
     gunzip -c slmpi.tar.gz | tar xf -
     make
@@ -73,15 +86,21 @@ Add ``slmpi-module.so`` to the ``isis_load_path``.
 
 6- Install the S-lang MCMC Hammer:
 
-Obtain the developing version from the github::
+Obtain the developing version from the github:
+
+.. code-block::
 
     git clone https://github.com/mcfit/slmpi_emcee.git
     
-Load the S-lang MCMC Hammer in your S-Lang script::
+Load the S-lang MCMC Hammer in your S-Lang script:
+
+.. code-block:: prolog
 
     require("mpi_isis_emcee");
 
-7- Run the example::
+7- Run the example:
+
+.. code-block::
 
     mpirun -np 8 isis ./example_mpi_emcee.sl
 
