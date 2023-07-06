@@ -721,7 +721,8 @@ private define mpi_init_walker(fp,nw,proc_rank,proc_total)
          }
          else
          {
-            xstrt[i,j] = (1-sc)*xp[i,k] + sc*(xl[i,k]+(xh[i,k]-xl[i,k])*(@(qualifier("urnd", &urand)))());
+            xstrt[i,j] = (1-sc)*xp[i,k] + 
+              sc*(xl[i,k]+(xh[i,k]-xl[i,k])*(@(qualifier("urnd", &urand)))());
          }
 
          if(xstrt[i,j]<xl[i,k]) xstrt[i,j] = xl[i,k];
@@ -930,7 +931,11 @@ public define mpi_emcee()
    variable pars = get_params;
 
    variable isc=0, sim_count_array, sim_count = int(qualifier("sim_count",50));
-   if(sim_count > 0) sim_count_array=[0:nsim+sim_count:sim_count];
+   if(sim_count <= 0) sim_count=50;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   sim_count_array=[0:nsim+sim_count:sim_count];
+   sim_count_array=[sim_count-1:nsim-1+sim_count:sim_count];
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    variable ochain, ostat, ochng;
 
    variable screwup    = qualifier("infile","NONE");
@@ -981,10 +986,11 @@ public define mpi_emcee()
          {
             if(qualifier_exists("nocopy"))
             {
-               variable wstat=@xstat;
+               variable wstat=@xstat, wchng=@ochng;
                reshape(wstat,[1,length(wstat)]);
+               reshape(wchng,[1,length(wchng)]);
                write_chain(outfile, nw, freepar, cdf_scl_lo, cdf_scl_hi,
-                           xwalk, wstat, ochng, pfile;create);
+                           xwalk, wstat, wchng, pfile;create);
             }
             else
             {
@@ -1316,7 +1322,7 @@ public define mpi_emcee()
          xout_chng[im,[0:nwf-1:2]] = xchng[iwlk_a];
          xout_chng[im,[1:nwf-1:2]] = xchng[iwlk_b];
          
-         if(i==0 && sim_count >0){ () = printf("\n Sim loop: \n"); }
+         if(i==0){ () = printf("\n Sim loop: \n"); }
          if( i==sim_count_array[isc] || i==nsim-1 )
          {
             if(isc==0)
