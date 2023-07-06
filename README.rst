@@ -2,6 +2,8 @@
 slmpi_emcee
 ===========
 
+**The MPI-based Parallelization of the S-Lang MCMC Hammer**
+
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :target: https://github.com/mcfit/slmpi_emcee/blob/master/LICENSE
     :alt: GitHub license
@@ -9,8 +11,9 @@ slmpi_emcee
 .. image:: https://img.shields.io/badge/DOI-10.5281/zenodo.4495925-blue.svg
     :target: https://doi.org/10.5281/zenodo.4495925
     :alt: Zenodo
-    
-**The MPI-based Parallelization of the S-Lang MCMC Hammer**
+
+Description
+===========
 
 `slmpi_emcee <https://www.sternwarte.uni-erlangen.de/wiki/index.php/Emcee>`_ is an MPI-based Parallelization of the S-Lang *Markov chain Monte Carlo (MCMC) Hammer* based on algorithm proposed by `Goodman & Weare (2010) <https://ui.adsabs.harvard.edu/abs/2010CAMCS...5...65G/abstract>`_, implemented in Python (`emcee <https://github.com/dfm/emcee>`_) by `Foreman-Mackey et al. (2013) <https://ui.adsabs.harvard.edu/abs/2013PASP..125..306F/abstract>`_, which has then been implemented in the `Interactive Spectral Interpretation System (ISIS) <http://space.mit.edu/cxc/isis/>`_ in S-Lang by `M. A. Nowak <http://space.mit.edu/home/mnowak/isis_vs_xspec/>`_, modified by T. Beuchert, L. Corrales, and M. Kuehnel, and extended for MPI-based Parallelization by A. Danehkar. It is now included in the `Remeis ISISscripts <http://www.sternwarte.uni-erlangen.de/isis/>`_. It utilizes the S-Lang MPI Interface Package (`slmpi <http://www.sternwarte.uni-erlangen.de/wiki/doku.php?id=isis:mpi>`_) implemented by Thomas Dauser and Fritz Schwarm. 
 
