@@ -1,1 +1,133 @@
-My GitHub Page
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>slmpi_emcee - MPI-based Parallelization of the S-Lang MCMC Hammer</title>
+    <meta name="description" content="slmpi_emcee - MPI-based Parallelization of the S-Lang MCMC Hammer - maintained by Ashkbiz Danehkar" />
+    <meta name="keywords" content="slmpi_emcee, MPI, MCMC, ISIS, EMCEE, Hammer, S-Lang, slmpi-emcee, HEASoft, Ashkbiz, Danehkar, Ashkbiz Danehkar" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Ashkbiz Danehkar" />
+    <meta name="google-site-verification" content="" />
+    <meta name="msvalidate.01" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link type="application/rss+xml" rel="sitemap"  href="//mcfit.github.io/slmpi_emcee/sitemap.xml" />
+  </head>
+  <body>
+    <section class="page-header">
+      <h2 class="project-name">slmpi_emcee</h2>
+      <h3 class="project-tagline">slmpi_emcee - MPI-based Parallelization of the S-Lang MCMC Hammer</h3>
+      <a href="https://github.com/mcfit/slmpi_emcee" class="btn">View on GitHub</a>
+      <a href="https://github.com/mcfit/slmpi_emcee/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/mcfit/slmpi_emcee/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h2>
+<a id="slmpiemcee" class="anchor" href="#slmpiemcee" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>slmpi_emcee</h2>
+
+<p><strong>slmpi_emcee</strong> - MPI-based Parallelization of the S-Lang MCMC Hammer</p>
+
+</div>
+<a class="reference external image-reference" href="https://github.com/mcfit/slmpi_emcee/blob/master/LICENSE"><object data="https://img.shields.io/badge/license-MIT-blue.svg" type="image/svg+xml">GitHub license</object></a>
+<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.4495925"><object data="https://img.shields.io/badge/DOI-10.5281/zenodo.4495925-blue.svg" type="image/svg+xml">Zenodo</object></a>
+<div class="section" id="description">
+<h2>Description</h2>
+<p><a class="reference external" href="https://www.sternwarte.uni-erlangen.de/wiki/index.php/Emcee">slmpi_emcee</a> is an MPI-based Parallelization of the S-Lang <em>Markov chain Monte Carlo (MCMC) Hammer</em> based on algorithm proposed by <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2010CAMCS...5...65G/abstract">Goodman &amp; Weare (2010)</a>, implemented in Python (<a class="reference external" href="https://github.com/dfm/emcee">emcee</a>) by <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2013PASP..125..306F/abstract">Foreman-Mackey et al. (2013)</a>, which has then been implemented in the <a class="reference external" href="http://space.mit.edu/cxc/isis/">Interactive Spectral Interpretation System (ISIS)</a> in S-Lang by <a class="reference external" href="http://space.mit.edu/home/mnowak/isis_vs_xspec/">M. A. Nowak</a>, modified by T. Beuchert, L. Corrales, and M. Kuehnel, and extended for MPI-based Parallelization by A. Danehkar. It is now included in the <a class="reference external" href="http://www.sternwarte.uni-erlangen.de/isis/">Remeis ISISscripts</a>. It utilizes the S-Lang MPI Interface Package (<a class="reference external" href="https://www.sternwarte.uni-erlangen.de/wiki/index.php/Parallel_Error_Calculation_using_MPI_and_SLmpi">SL-MPI</a>) implemented by Thomas Dauser and Fritz Schwarm.</p>
+<div class="section" id="installation">
+<h2>Installation</h2>
+<p>1- Install HEASoft: download the <a class="reference external" href="https://heasarc.gsfc.nasa.gov/docs/software/heasoft/">HEASOFT Software</a>:</p>
+<pre class="code literal-block">
+gunzip -c heasoft6.19.tar.gz | tar xf -
+cd heasoft-6.19/BUILD_DIR/
+./configure
+make
+make install
+</pre>
+<p>2- Install ISIS:</p>
+<pre class="code literal-block">
+wget http://space.mit.edu/cxc/isis/install-isis.sh
+setenv HEADAS /usr/local/headas/x86_64-unknown-linux-gnu-libc2.7/
+sh install-isis.sh DIR
+</pre>
+<p>3- Install ISISscripts: download the <a class="reference external" href="http://www.sternwarte.uni-erlangen.de/isis/">Remeis ISISscripts</a></p>
+<p>or obtain the developing version from the ISISscripts git-repository:</p>
+<pre class="code literal-block">
+git clone http://www.sternwarte.uni-erlangen.de/git.public/isisscripts
+tar xfz isisscripts.tgz
+</pre>
+<p>Add it to to your personal <tt class="docutils literal"><span class="pre">~/.isisrc</span></tt> startup file:</p>
+<pre class="code prolog literal-block">
+<span class="name function">add_to_isis_load_path</span><span class="punctuation">(</span><span class="literal string double">&quot;/path/to/isisscripts/&quot;</span><span class="punctuation">);</span>
+</pre>
+<p>Load the ISISscripts in your S-Lang script:</p>
+<pre class="code prolog literal-block">
+<span class="name function">require</span><span class="punctuation">(</span><span class="literal string double">&quot;isisscripts&quot;</span><span class="punctuation">);</span>
+</pre>
+<p>4- Install the S-Lang Interface Package (<a class="reference external" href="http://space.mit.edu/cxc/slirp/">slirp</a>):</p>
+<p>download <a class="reference external" href="http://www.jedsoft.org/snapshots/">slirp-pre2.0.0-31.tar.gz</a></p>
+<p>Then:</p>
+<pre class="code literal-block">
+gunzip -c slirp-pre2.0.0-31.tar.gz | tar xf -
+./configure
+make
+make install
+</pre>
+<p>Add <tt class="docutils literal"><span class="pre">slirp-module.so</span></tt> to the <tt class="docutils literal">isis_load_path</tt>.</p>
+<p>5- Install the S-lang MPI Interface Package:</p>
+<p>download <a class="reference external" href="http://www.sternwarte.uni-erlangen.de/git.public/?p=slmpi.git">slmpi</a></p>
+<p>Then:</p>
+<pre class="code literal-block">
+gunzip -c slmpi.tar.gz | tar xf -
+make
+</pre>
+<p>Add <tt class="docutils literal"><span class="pre">slmpi-module.so</span></tt> to the <tt class="docutils literal">isis_load_path</tt>.</p>
+<p>6- Install the S-lang MCMC Hammer:</p>
+<p>Obtain the developing version from the github:</p>
+<pre class="code literal-block">
+git clone https://github.com/mcfit/slmpi_emcee.git
+</pre>
+<p>Load the S-lang MCMC Hammer in your S-Lang script:</p>
+<pre class="code prolog literal-block">
+<span class="name function">require</span><span class="punctuation">(</span><span class="literal string double">&quot;mpi_isis_emcee&quot;</span><span class="punctuation">);</span>
+</pre>
+<p>7- Run the example:</p>
+<pre class="code literal-block">
+mpirun -np 8 isis ./example_mpi_emcee.sl
+</pre>
+</div>
+<div class="section" id="learn-more">
+<h2>Learn More</h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr><td><strong>Repository</strong></td>
+<td><a class="reference external" href="https://github.com/mcfit/slmpi_emcee">https://github.com/mcfit/slmpi_emcee</a></td>
+</tr>
+<tr><td><strong>Issues &amp; Ideas</strong></td>
+<td><a class="reference external" href="https://github.com/mcfit/slmpi_emcee/issues">https://github.com/mcfit/slmpi_emcee/issues</a></td>
+</tr>
+<tr><td><strong>Archive</strong></td>
+<td><a class="reference external" href="https://doi.org/10.5281/zenodo.4495925">10.5281/zenodo.4495925</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/mcfit/slmpi_emcee">slmpi_emcee</a> is maintained by <a href="https://github.com/danehkar">Ashkbiz Danehkar</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
