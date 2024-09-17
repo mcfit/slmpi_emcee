@@ -58,9 +58,9 @@ _for i (0, nw-1, 1) { % loop over all walkers
 variable id1 = open_plot("/xwin");
 variable frac_update;
 frac_update = read_chain("emcee-chain.fits"; frac_update);
- xlabel("Iteration Step");
- ylabel("Acceptance Rate");
- plot([0:length(frac_update)-1], frac_update);
+xlabel("Iteration Step");
+ylabel("Acceptance Rate");
+plot([0:length(frac_update)-1], frac_update);
 
 % New Windows
 variable id3 = open_plot("/xwin");
