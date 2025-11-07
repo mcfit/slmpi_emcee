@@ -38,7 +38,7 @@ all:		${OBJS} ${HDRS}
 .PHONY:		wrapper
 wrapper:	
 		slirp -make $(MOD_NAME).h $(MOD_NAME).o
-		sed -i 's|/usr/bin/gcc|'$(MPICC_LOC)'|' $(MOD_NAME).mf
+		sed -i 's|'`which gcc`'|'$(MPICC_LOC)'|' $(MOD_NAME).mf
 		@make --no-print-directory -f $(MOD_NAME).mf
 
 test:		test/test.o
