@@ -20,7 +20,7 @@ LIB_OPTS = -L${LIBDIR}
 OBJS += $(patsubst %.c, %.o, $(wildcard *.c))
 HDRS += $(wildcard *.h)
 OPTS += $(INC_OPTS) -lm
-MPICC_LOC=/usr/lib64/openmpi/bin/mpicc
+MPICC_LOC=mpicc
 
 MOD_NAME = slmpi
 
