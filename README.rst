@@ -133,5 +133,6 @@ Learn More
 ==================  =============================================
 **Repository**      https://github.com/mcfit/slmpi_emcee
 **Issues & Ideas**  https://github.com/mcfit/slmpi_emcee/issues
+**DOI**             `10.26624/LJPV6003 <https://doi.org/10.26624/LJPV6003>`_
 **Archive**         `10.5281/zenodo.4495925 <https://doi.org/10.5281/zenodo.4495925>`_
 ==================  =============================================
