@@ -113,7 +113,7 @@ Acknowledgement
 
 If you employ **slmpi_emcee** in your work, please acknowledge the usage by citing the following reference:
 	
-* Danehkar, A. (2025). slmpi_emcee: MPI Parallelization of the S-Lang MCMC Hammer. *ASP Conf. Ser.*, **538**, 405. doi: `10.26624/LJPV6003 <https://doi.org/10.26624/LJPV6003>`_ ads: `22025ASPC..538..405D <https://ui.adsabs.harvard.edu/abs/2025ASPC..538..405D/abstract>`_.
+* Danehkar, A. (2025). slmpi_emcee: MPI Parallelization of the S-Lang MCMC Hammer. *ASP Conf. Ser.*, **538**, 405. doi: `10.26624/LJPV6003 <https://doi.org/10.26624/LJPV6003>`_ ads: `2025ASPC..538..405D <https://ui.adsabs.harvard.edu/abs/2025ASPC..538..405D/abstract>`_.
 
 .. code-block:: bibtex
 
