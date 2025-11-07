@@ -117,7 +117,7 @@ If you employ **slmpi_emcee** in your work, please acknowledge the usage by citi
 
 .. code-block:: bibtex
 
-   @article{Danehkar2018,
+   @article{Danehkar2025,
      author = {{Danehkar}, Ashkbiz,
      title = {slmpi\_emcee: MPI Parallelization of the S-Lang MCMC Hammer},
      journal = {ASP Conf. Ser.},
